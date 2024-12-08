@@ -5,8 +5,14 @@ spring:
     url: r2dbc:postgresql://localhost:5432/zapomio
     username: admin
     password: admin
-  sql:
-    init:
-      mode: never
-  flyway:
-    enabled: false
+  liquibase:
+    url: jdbc:postgresql://localhost:5432/zapomio
+    user: admin
+    password: admin
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+logging:
+  level:
+    root: INFO
+    org.springframework.r2dbc.core: DEBUG
+    org.springframework.liquibase: INFO
