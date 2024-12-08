@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: zapamio
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/zapomio
+    username: admin
+    password: admin
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: false
